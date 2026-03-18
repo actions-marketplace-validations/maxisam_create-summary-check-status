@@ -7,7 +7,7 @@ jobs:
   job-failure1:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: step 1
       run: |
@@ -31,7 +31,7 @@ jobs:
   job-failure2:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: step 1
       run: |
@@ -54,7 +54,7 @@ jobs:
     needs: [job-failure1, job-failure2, job-failure3]
     if: always()
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
       - uses: ./
         id: check-summary
         with:
